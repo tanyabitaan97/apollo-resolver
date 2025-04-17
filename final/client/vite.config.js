@@ -15,8 +15,8 @@ export default defineConfig(() => ({
     port: 3000
   },
   esbuild: {
-    loader: "jsx",
-    include: /src\/.*\.jsx?$/,
+    loader:  "jsx" ,
+    include: /src\/.*\.js?$/,
     // loader: "tsx",
     // include: /src\/.*\.[tj]sx?$/,
     exclude: [],
@@ -28,7 +28,7 @@ export default defineConfig(() => ({
           name: "load-js-files-as-jsx",
           setup(build) {
             build.onLoad({ filter: /src\/.*\.js$/ }, async (args) => ({
-              loader: "jsx",
+              loader:  "jsx" ,
               contents: await fs.readFile(args.path, "utf8"),
             }));
           },

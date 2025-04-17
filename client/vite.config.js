@@ -15,23 +15,21 @@ export default defineConfig(() => ({
     port: 3000
   },
   esbuild: {
-    loader: "jsx",
-    include: /src\/.*\.jsx?$/,
+    loader:  "jsx" ,
+    include: /src\/.*\.js?$/,
     // loader: "tsx",
     // include: /src\/.*\.[tj]sx?$/,
     exclude: [],
   },
   optimizeDeps: {
     esbuildOptions: {
-      loader: {
-        '.js': 'jsx',
-      },
+      loader:  "jsx" ,
       plugins: [
         {
-          name: "load-js-files-as-jsx",
+          name: "load-js-files-as-js",
           setup(build) {
             build.onLoad({ filter: /src\/.*\.js$/ }, async (args) => ({
-              loader: "jsx",
+              loader: "js",
               contents: await fs.readFile(args.path, "utf8"),
             }));
           },
