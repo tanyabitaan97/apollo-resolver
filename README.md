@@ -23,3 +23,7 @@ In another terminal window,
 1. Run `npm start`.
 
 This will open up `localhost:3000` in your web browser.
+
+output->
+![image](https://github.com/user-attachments/assets/c3777974-d2ef-4e77-9efc-885be574f9c3)
+
